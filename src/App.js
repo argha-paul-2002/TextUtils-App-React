@@ -5,14 +5,14 @@ import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
-import { createRoot } from "react-dom/client";
+// import { createRoot } from "react-dom/client";
 import { BrowserRouter } from 'react-router-dom'
 import {
-  createBrowserRouter,
-  RouterProvider,
+  // createBrowserRouter,
+  // RouterProvider,
   Route,
   Routes,
-  Link,
+  // Link,
 } from "react-router-dom";
 
 function App() {
@@ -72,7 +72,7 @@ function App() {
       <Alert alert={alert} />
       <div className="container"> 
         <Routes>
-            <Route exact path="/" element={<TextForm showAlert={showAlert}  mode={mode}/>}></Route>
+            <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter your text here"  mode={mode}/>}></Route>
             <Route exact path="/about" element={<About mode={mode}/>}></Route>
         </Routes>
       </div>
