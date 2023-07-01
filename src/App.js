@@ -34,22 +34,26 @@ function App() {
     document.body.classList.remove('bg-light')
     document.body.classList.remove('bg-dark')
     document.body.classList.remove('bg-success')
-    document.body.classList.remove('bg-primary')
     document.body.classList.remove('bg-danger')
     document.body.classList.remove('bg-warning')
   }
 
-  const toggleMode = (cls) => {
+  const toogle =(cls)=>{
     removeBodyClasses();
     document.body.classList.add('bg-'+cls);
+    showAlert("Theme changed Successfully", "success");
+  }
+
+  const toggleMode = () => {
+    removeBodyClasses();
     if (mode === "light") {
       setMode("dark");
       document.body.style.backgroundColor = "rgb(25 39 58)";
-      showAlert("Dark mode has been enabled", "success");
+      showAlert("Dark mode Enabled", "success");
     } else {
       setMode("light");
       document.body.style.backgroundColor = "white";
-      showAlert("Light mode has been enabled", "success");
+      showAlert("Light mode enabled", "success");
     }
   };
 
@@ -79,7 +83,7 @@ function App() {
   return (
     <>
     <BrowserRouter>
-      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} />
+      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} toogle={toogle}/>
       <Alert alert={alert} />
       <div className="container"> 
         <Routes>
